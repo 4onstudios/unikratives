@@ -486,6 +486,7 @@ export default function Home() {
               alt="Unikrative team and hiring opportunity"
               width={900}
               height={650}
+              unoptimized
               className="h-72 w-full object-cover sm:h-80 md:h-full"
             />
             <div className="p-6 sm:p-8 md:p-10">
