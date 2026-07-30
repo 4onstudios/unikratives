@@ -20,7 +20,11 @@ function getPreferredTheme(): Theme {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => getPreferredTheme());
+  const [theme, setTheme] = useState<Theme>("light");
+
+  useEffect(() => {
+    setTheme(getPreferredTheme());
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
