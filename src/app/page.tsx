@@ -412,6 +412,7 @@ export default function Home() {
             <p className="section-copy">
               Reach out for wholesale orders, partnerships, export opportunities, or product enquiries.
             </p>
+
             <div className="mt-8 space-y-4">
               <a href="mailto:info@unikratives.com" className="contact-link">
                 <FaEnvelope aria-hidden /> info@unikratives.com
@@ -474,6 +475,35 @@ export default function Home() {
               <FaEnvelope aria-hidden /> Send enquiry
             </button>
           </form>
+        </div>
+      </section>
+
+      <section className="border-t border-stone-200 bg-white px-5 py-16 lg:px-8 dark:border-white/10 dark:bg-stone-900">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-lg border border-stone-200 bg-stone-50 shadow-sm dark:border-white/10 dark:bg-stone-950">
+          <div className="grid gap-0 md:grid-cols-[1.1fr_0.9fr]">
+            <Image
+              src="/hiring.jpeg"
+              alt="Unikrative team and hiring opportunity"
+              width={900}
+              height={650}
+              className="h-72 w-full object-cover sm:h-80 md:h-full"
+            />
+            <div className="p-6 sm:p-8 md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">
+                We&apos;re growing
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold text-stone-950 dark:text-stone-50">Join the Unikrative team</h3>
+              <p className="mt-3 max-w-xl text-base leading-8 text-stone-650 dark:text-stone-300">
+                We&apos;re looking for passionate people to support operations, partnerships, and product growth.
+              </p>
+              <a
+                href="mailto:info@unikratives.com?subject=Career%20Enquiry"
+                className="mt-6 inline-flex font-semibold text-emerald-700 transition hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-200"
+              >
+                Send a career enquiry
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
