@@ -82,3 +82,21 @@ textarea {
     @apply w-full rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-base font-normal text-stone-950 transition placeholder:text-stone-400 focus:border-emerald-700 focus:bg-white focus:outline-none focus:ring-4 focus:ring-emerald-700/10 dark:border-white/10 dark:bg-stone-950 dark:text-stone-50 dark:placeholder:text-stone-500 dark:focus:border-emerald-400 dark:focus:bg-stone-900 dark:focus:ring-emerald-300/10;
   }
 }
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 0.95;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2.2s ease-in-out infinite;
+}
