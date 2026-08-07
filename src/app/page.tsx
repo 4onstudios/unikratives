@@ -28,6 +28,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 export default function Home() {
   const mainRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
 
   useGSAP(
     () => {
@@ -133,6 +134,48 @@ export default function Home() {
           </div>
         </nav>
       </header>
+
+      <button
+        type="button"
+        onClick={() => setIsAlertOpen(true)}
+        className="fixed bottom-5 right-5 z-50 overflow-hidden rounded-2xl border border-amber-400 bg-white/90 p-2 shadow-2xl shadow-amber-500/20 transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-300"
+      >
+        <div className="animate-pulse-slow rounded-2xl border border-amber-400 bg-amber-100/80">
+          <Image
+            src="/alert.jpeg"
+            alt="Brand alert image"
+            width={160}
+            height={160}
+            className="h-20 w-20 rounded-2xl object-cover"
+          />
+
+        </div>
+      </button>
+
+      {isAlertOpen ? (
+        <div className="fixed inset-0 z-50 grid place-items-center bg-stone-950/70 px-4 py-8 backdrop-blur-sm">
+          <div className="w-full max-w-4xl md:max-w-112.5 rounded-4xl border border-white/10 bg-white p-4 shadow-2xl shadow-black/30 dark:border-white/10 dark:bg-stone-950">
+            <div className="flex items-center justify-end">
+              <button
+                type="button"
+                onClick={() => setIsAlertOpen(false)}
+                className="rounded-full bg-stone-200 px-4 py-2 text-sm font-semibold text-stone-950 transition hover:bg-stone-300 dark:bg-stone-800 dark:text-stone-50 dark:hover:bg-stone-700"
+              >
+                Close
+              </button>
+            </div>
+            <div className="mt-4 overflow-hidden rounded-3xl bg-stone-900">
+              <Image
+                src="/alert.jpeg"
+                alt="Full brand alert image"
+                width={1600}
+                height={1200}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <section id="home" className="relative overflow-hidden bg-white pt-28 dark:bg-stone-950">
         <div className="mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-12 px-5 pb-16 lg:grid-cols-[1fr_0.88fr] lg:px-8">
