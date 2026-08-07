@@ -18,6 +18,7 @@ import {
 
 import CASHEWNUT from "./../../public/cashew_nut.jpg";
 import FOUNDER from "./../../public/unikrative.jpg";
+import ALERT_IMAGE from "./../../public/alert.jpeg";
 import { ThemeToggle } from "./theme-toggle";
 import products from "../../data/products";
 import { features, galleryImages, stats, testimonials } from "@/data/page";
@@ -142,7 +143,7 @@ export default function Home() {
       >
         <div className="animate-pulse-slow rounded-2xl border border-amber-400 bg-amber-100/80">
           <Image
-            src="/alert.jpeg"
+            src={ALERT_IMAGE}
             alt="Brand alert image"
             width={160}
             height={160}
@@ -166,7 +167,7 @@ export default function Home() {
             </div>
             <div className="mt-4 overflow-hidden rounded-3xl bg-stone-900">
               <Image
-                src="/alert.jpeg"
+                src={ALERT_IMAGE}
                 alt="Full brand alert image"
                 width={1600}
                 height={1200}
