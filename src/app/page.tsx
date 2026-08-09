@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -30,6 +30,20 @@ export default function Home() {
   const mainRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isAlertOpen, setIsAlertOpen] = useState(false);
+
+  //this section bring out the brand assets on a new page reload 
+  // or opening the page for the first time.
+  useEffect(() => {
+    const hasSeenAlert = localStorage.getItem("hasSeenAlert");
+    if (!hasSeenAlert) {
+      setIsAlertOpen(true);
+    }
+
+    setInterval(() => {
+      localStorage.removeItem("hasSeenAlert")
+    }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+
+  }, []);
 
   useGSAP(
     () => {
@@ -136,30 +150,16 @@ export default function Home() {
         </nav>
       </header>
 
-      <button
-        type="button"
-        onClick={() => setIsAlertOpen(true)}
-        className="fixed bottom-5 right-5 z-50 overflow-hidden rounded-2xl border border-amber-400 bg-white/90 p-2 shadow-2xl shadow-amber-500/20 transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-300"
-      >
-        <div className="animate-pulse-slow rounded-2xl border border-amber-400 bg-amber-100/80">
-          <Image
-            src={ALERT_IMAGE}
-            alt="Brand alert image"
-            width={160}
-            height={160}
-            className="h-20 w-20 rounded-2xl object-cover"
-          />
-
-        </div>
-      </button>
-
       {isAlertOpen ? (
         <div className="fixed inset-0 z-50 grid place-items-center bg-stone-950/70 px-4 py-8 backdrop-blur-sm">
           <div className="w-full max-w-4xl md:max-w-112.5 rounded-4xl border border-white/10 bg-white p-4 shadow-2xl shadow-black/30 dark:border-white/10 dark:bg-stone-950">
             <div className="flex items-center justify-end">
               <button
                 type="button"
-                onClick={() => setIsAlertOpen(false)}
+                onClick={() => {
+                  setIsAlertOpen(false)
+                  localStorage.setItem("hasSeenAlert", "true");
+                }}
                 className="rounded-full bg-stone-200 px-4 py-2 text-sm font-semibold text-stone-950 transition hover:bg-stone-300 dark:bg-stone-800 dark:text-stone-50 dark:hover:bg-stone-700"
               >
                 Close
