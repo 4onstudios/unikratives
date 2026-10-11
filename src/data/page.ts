@@ -1,8 +1,11 @@
 import {
+  FaChalkboardTeacher,
   FaChartLine,
   FaGlobeAfrica,
   FaHandHoldingHeart,
+  FaPrint,
   FaRecycle,
+  FaTractor,
 } from "react-icons/fa";
 
 export const features = [
@@ -25,6 +28,27 @@ export const features = [
     icon: FaHandHoldingHeart,
     title: "Farmer First",
     text: "Direct market access that helps rural producers earn fairer, steadier returns.",
+  },
+];
+
+export const services = [
+  {
+    number: "01",
+    icon: FaTractor,
+    title: "Agricultural Supplies & Livelihood Support",
+    text: "Supporting agricultural productivity through the supply of farming inputs, tools, equipment and livelihood support essentials.",
+  },
+  {
+    number: "02",
+    icon: FaChalkboardTeacher,
+    title: "Training & Capacity Development",
+    text: "Empowering individuals, communities and organisations through practical training, workshop facilitation, agricultural development and skills-building initiatives.",
+  },
+  {
+    number: "03",
+    icon: FaPrint,
+    title: "Printing & Branding",
+    text: "Helping businesses and organisations communicate their identity through professional printing, branding materials and tailored promotional solutions.",
   },
 ];
 

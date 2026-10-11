@@ -21,7 +21,7 @@ import FOUNDER from "./../../public/unikrative.jpg";
 import ALERT_IMAGE from "./../../public/alert.jpeg";
 import { ThemeToggle } from "./theme-toggle";
 import products from "../../data/products";
-import { features, galleryImages, stats, testimonials } from "@/data/page";
+import { features, galleryImages, services, stats, testimonials } from "@/data/page";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -139,6 +139,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="hidden items-center gap-7 text-sm font-medium text-stone-700 md:flex dark:text-stone-300">
               <a href="#about" className="transition hover:text-emerald-700 dark:hover:text-emerald-300">About</a>
+              <a href="#services" className="transition hover:text-emerald-700 dark:hover:text-emerald-300">Services</a>
               <a href="#products" className="transition hover:text-emerald-700 dark:hover:text-emerald-300">Products</a>
               <a href="#impact" className="transition hover:text-emerald-700 dark:hover:text-emerald-300">Impact</a>
               <a href="#contact" className="rounded-lg bg-stone-950 px-5 py-2.5 text-white transition hover:bg-emerald-800 dark:bg-stone-100 dark:text-stone-950 dark:hover:bg-emerald-300">
@@ -306,6 +307,32 @@ export default function Home() {
                 <feature.icon aria-hidden className="size-7 text-emerald-700 dark:text-emerald-300" />
                 <h3 className="mt-5 text-xl font-semibold">{feature.title}</h3>
                 <p className="mt-3 leading-7 text-stone-650 dark:text-stone-300">{feature.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="px-5 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="section-kicker">Our services</p>
+            <h2 className="section-title">Practical support for agriculture, communities, and businesses.</h2>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {services.map((service) => (
+              <article
+                key={service.number}
+                className="scroll-reveal rounded-lg border border-stone-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-stone-900"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-bold tracking-[0.16em] text-amber-700 dark:text-amber-300">
+                    {service.number}
+                  </span>
+                  <service.icon aria-hidden className="size-7 text-emerald-700 dark:text-emerald-300" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold">{service.title}</h3>
+                <p className="mt-3 leading-7 text-stone-650 dark:text-stone-300">{service.text}</p>
               </article>
             ))}
           </div>
@@ -572,6 +599,7 @@ export default function Home() {
             <h3 className="font-semibold">Explore</h3>
             <div className="mt-4 grid gap-2 text-sm text-stone-400">
               <a href="#about" className="hover:text-white">About</a>
+              <a href="#services" className="hover:text-white">Services</a>
               <a href="#products" className="hover:text-white">Products</a>
               <a href="#impact" className="hover:text-white">Impact</a>
               <a href="#contact" className="hover:text-white">Contact</a>
