@@ -1,7 +1,9 @@
 import {
   FaChalkboardTeacher,
   FaChartLine,
+  FaDesktop,
   FaGlobeAfrica,
+  FaHandshake,
   FaHandHoldingHeart,
   FaPrint,
   FaRecycle,
@@ -49,6 +51,18 @@ export const services = [
     icon: FaPrint,
     title: "Printing & Branding",
     text: "Helping businesses and organisations communicate their identity through professional printing, branding materials and tailored promotional solutions.",
+  },
+  {
+    number: "04",
+    icon: FaDesktop,
+    title: "Procurement & Supply of Office Equipment",
+    text: "Sourcing and supplying reliable office equipment and workplace essentials to support efficient day-to-day operations.",
+  },
+  {
+    number: "05",
+    icon: FaHandshake,
+    title: "Partnership & Collaboration",
+    text: "Building partnerships with organisations and communities to share expertise, strengthen initiatives and create lasting impact.",
   },
 ];
 
